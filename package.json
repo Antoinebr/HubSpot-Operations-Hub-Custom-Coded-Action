@@ -1,0 +1,24 @@
+{
+  "name": "hubspot-operations-hub-custom-coded-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antoinebr/HubSpot-Operations-Hub-Custom-Coded-Action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antoinebr/HubSpot-Operations-Hub-Custom-Coded-Action/issues"
+  },
+  "homepage": "https://github.com/Antoinebr/HubSpot-Operations-Hub-Custom-Coded-Action#readme",
+  "dependencies": {
+    "axios": "^1.1.3",
+    "dotenv": "^16.0.3"
+  }
+}
