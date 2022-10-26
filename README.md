@@ -62,4 +62,10 @@ cca(){
 }
 ```
 
+Then to invoke the  Custom Coded Action you can just call 
+
+```bash
+cca ./merge-companies-based-on-name/cca.js
+```
+
 
