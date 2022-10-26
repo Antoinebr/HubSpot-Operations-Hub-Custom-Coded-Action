@@ -61,9 +61,9 @@ exports.main = async (event, callback) => {
      */
     const mergeAcompany = (primaryObjectId, objectIdToMerge) => {
 
-        if (!primaryObjectId) throw new Error(`You have to put the company id has the first argument `)
+        if (!primaryObjectId) throw new Error(`You have to put the company id as the first argument `)
 
-        if (!objectIdToMerge) throw new Error(`You have to put the company id has the sencond argument `)
+        if (!objectIdToMerge) throw new Error(`You have to put the company id as the second argument `)
 
         const endpoint = `https://api.hubapi.com/crm/v3/objects/companies/merge`;
 
