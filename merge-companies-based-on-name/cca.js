@@ -13,7 +13,7 @@ exports.main = async (event, callback) => {
     /**
      * @name getPortalInfo
      * @desc Grab the portal id and various other infos
-     * @returns {promise}
+     * @returns {promise}it returns an axios object
      */
     const getPortalInfo = async () => {
         const endpoint = `https://api.hubapi.com/integrations/v1/me`;
@@ -22,6 +22,11 @@ exports.main = async (event, callback) => {
     }
 
 
+    /**
+     * @name searchInCompanies
+     * @param {string} name company name
+     * @returns {promise} it returns an axios object
+     */
     const searchInCompanies = async (name) => {
 
         const endpoint = `https://api.hubapi.com/crm/v3/objects/companies/search`;
@@ -47,15 +52,18 @@ exports.main = async (event, callback) => {
     }
 
 
-
-
-
+    /**
+     * 
+     * @name mergeAcompany
+     * @param {integer} primaryObjectId 
+     * @param {integer} objectIdToMerge 
+     * @returns {promise} it returns an axios object
+     */
     const mergeAcompany = (primaryObjectId, objectIdToMerge) => {
 
         if (!primaryObjectId) throw new Error(`You have to put the company id has the first argument `)
 
         if (!objectIdToMerge) throw new Error(`You have to put the company id has the sencond argument `)
-
 
         const endpoint = `https://api.hubapi.com/crm/v3/objects/companies/merge`;
 
@@ -67,7 +75,7 @@ exports.main = async (event, callback) => {
     }
 
 
-    
+
     if (!event.inputFields.companyName) throw new Error('companyName has to be setup in the "Property to include in code" section ');
 
     const companyName = event.inputFields.companyName;
@@ -79,6 +87,7 @@ exports.main = async (event, callback) => {
     }
 
 
+    // there's 3 matches or more, we can't merge anything here
     if (companies.data.total > 2) {
 
         const portal = await getPortalInfo();
@@ -105,16 +114,15 @@ exports.main = async (event, callback) => {
 
     console.log(`Let's merge the company ${oldestCompany} with the duplicate ${newestCompany}`);
 
-    const res = await mergeAcompany(oldestCompany, newestCompany);
+    const res = await mergeAcompany(oldestCompany, oldestCompany);
 
     console.log(res.data);
 
     callback({
         outputFields: {
-            email: "email",
-            phone: "phone"
+            oldestCompany,
+            newestCompany
         }
     });
-
 
 }

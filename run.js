@@ -15,7 +15,7 @@ let event = null;
 try {
     event = require(eventFile).events;
 } catch (error) {
-    throw new Error(`Looks like the event file is missing`);
+    throw new Error(`Looks like the event file is missing, we failed to call ${eventFile}`);
 }
 
 
