@@ -11,7 +11,7 @@ exports.main = async (event, callback) => {
 
     /**
      * @name searchACompany
-     * @desc run a graphQL query, it's important to have a private app token with the graphQL scope enabled see : https://developers.hubspot.com/docs/cms/data/query-hubspot-data-using-graphql#scope-requirements
+     * @desc runs a graphQL query
      * 
      */
     const searchACompany = async (nameContains) => {
@@ -20,7 +20,7 @@ exports.main = async (event, callback) => {
 
         return await axios.post(endpoint, {
             "query": `
-                query MyQuery {
+                query myQuery {
                     CRM {
                       company_collection(filter: {name__contains: "${nameContains}"}) {
                         items {
