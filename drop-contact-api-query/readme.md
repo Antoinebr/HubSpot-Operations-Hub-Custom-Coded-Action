@@ -10,7 +10,7 @@ This Custom Coded Action connects with the https://www.dropcontact.com/ API
 ![Alt text](../screenshots/ss-dc-overview.png "Optional Title")
 
 
-## Zetup
+## Setup
 
 You have to create a workflow with a contact based trigger with at least an email adress as a filter. 
 
