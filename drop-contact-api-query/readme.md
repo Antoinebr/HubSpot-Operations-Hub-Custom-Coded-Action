@@ -10,12 +10,16 @@ This Custom Coded Action connects with the https://www.dropcontact.com/ API
 ![Alt text](../screenshots/ss-dc-overview.png "Optional Title")
 
 
-## setup
+## Zetup
 
 You have to create a workflow with a contact based trigger with at least an email adress as a filter. 
 
 
-Then create 2 Custom Coded Action, one with ```drop-contact-api-query/cca.js```
+Then create two Custom Coded Actions, one with ```drop-contact-api-query/cca.js``` the the other one with ``` drop-contact-api-query-results/cca.js``` 
+
+Why two ? Because of how dropContact API is designed. First you "order" data, then you receive a requestID that you can query to collect your "order" result. 
+
+### API KEY
 
 You need to have an API key for dropcontact, this key has to be added in the secrets with the name ```dropContactAPI```
 Pay attention to extra withe spaces. 
