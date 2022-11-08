@@ -52,8 +52,15 @@ Then execute the code by calling :
 node run.js ./name-of-the-folder/file-name.js 
 ```
 
+or 
 
-For more confort it can be a good idea to create an alias in your bashrc / .zshrc
+```bash
+npm run cca ./get-siret-from-domain-name/cca.js
+```
+
+
+
+Or for more confort it can be a good idea to create an alias in your bashrc / .zshrc
 
 example : 
 ```bash 
