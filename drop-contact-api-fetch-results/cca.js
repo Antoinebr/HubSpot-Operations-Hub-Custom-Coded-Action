@@ -13,7 +13,7 @@ exports.main = async (event, callback) => {
 
     const getQueryResult = async (requestID) => {
 
-        if (typeof requestID !== "string") throw new Error(`The request id has to be set we receibed ${requestID} with a type od ${typeof requestID}`);
+        if (typeof requestID !== "string") throw new Error(`The request id has to be set we received ${requestID} with a type of ${typeof requestID}`);
 
         const endpoint = `https://api.dropcontact.io/batch/${requestID}`;
 
