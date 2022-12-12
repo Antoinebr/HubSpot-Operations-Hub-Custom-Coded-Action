@@ -35,7 +35,7 @@ exports.main = async (event, callback) => {
         Deal amount * Probability * Days left in the year * Land and expand (1.25 for yes, 1.00 for no)
     */
 
-    const customForecastAmount = (probability * daysRemaining() * landAndExpand)
+    const customForecastAmount = (dealAmount * probability * daysRemaining() * landAndExpand)
 
 
     callback({
