@@ -49,25 +49,29 @@ exports.main = async (event, callback) => {
      * @desc Grab the portal id and various other infos
      * @returns {promise}it returns an axios object
      */
-     const getPortalInfo = async () => {
+    const getPortalInfo = async () => {
         const endpoint = `https://api.hubapi.com/integrations/v1/me`;
 
         return axios.get(endpoint, axiosConfig);
     }
 
-
+    
     const domainName = event.inputFields.domainName;
 
-    if(!domainName) throw new Error('domainName is not set, are you sure you put domainName in the "properties to include in code" ? ');
+    if (!domainName) throw new Error('domainName is not set, are you sure you put domainName in the "properties to include in code" ? ');
+
 
     const portalInfos = await getPortalInfo();
-    
-    if(!portalInfos.data) throw new Error(`We couldn't grab the siret infos for ${domainName}`);
-    
+
+    if (!portalInfos.data) throw new Error(`We couldn't grab your portal infos`);
+
+    const { portalId, timeZone, currency } = portalInfos.data;
 
     callback({
         outputFields: {
-            domainName,
+            portalId,
+            timeZone,
+            currency
         }
     });
 
@@ -79,11 +83,11 @@ The event.js file represent the properties you can include in code.
 
 ```JavaScript
 exports.events = {
-    object: {
-        objectId: 3401
-    },
+    // object: {
+    //     objectId: 3401
+    // },
     inputFields: {
-        companyName : "HubSpot"
+        domainName : "google.com"
     }
 }
 ```

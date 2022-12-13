@@ -3,6 +3,6 @@ exports.events = {
     //     objectId: 3401
     // },
     inputFields: {
-        companyName : "Google"
+        domainName : "google.com"
     }
 }
