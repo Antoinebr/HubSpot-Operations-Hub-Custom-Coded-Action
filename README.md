@@ -1,11 +1,12 @@
 # HubSpot OperationsHub Custom Coded Action
 
 
-The idea of this repo is to share Custom Coded Actions which work with HubSpot Operations Hub pro. 
-It also provides a "framework" to work locally on your Custom Coded Action and execute it in the same context as HubSpot. 
+The idea of this is to provides a "framework" to work locally on your Custom Coded Action and execute it in the same context as HubSpot. 
 
-The project will prevent you to add librairies that are not allowed to be imported on the HubSpot Custom Coded Action.
-[List of allowed librairies here](https://developers.hubspot.com/docs/api/workflows/custom-code-actions#:~:text=Node.js%20supported%20libraries)
+You can write your Custom Coded Action locally, as we mocked the specific functions and limitations that exist with Operations Hub pro.
+
+As an example : the project will prevent you to add librairies that are not allowed to be imported on the HubSpot Custom Coded Action.
+[list of allowed librairies here](https://developers.hubspot.com/docs/api/workflows/custom-code-actions#:~:text=Node.js%20supported%20libraries)
 
 
 ## How to use
