@@ -21,9 +21,31 @@ try {
 
 if (!event.inputFields) throw new Error('event.inputFields Has to be defined');
 
+
+
+/**
+ * @name getKeyValueTypes
+ * @description This function takes an object as parameter and returns an object with the keys and their types.
+ * @param {Object} obj The object for which we want to get the keys and their types.
+ * @return {Object} An object with the keys and their types.
+ */
+const getKeyValueTypes = (obj) => {
+    const keyValueTypes = {};
+    Object.keys(obj).forEach(key => {
+        keyValueTypes[key] = typeof obj[key];
+    });
+    return keyValueTypes;
+}
+
+
+
 const cca = require(fileName);
 
 cca.main(event, output => {
 
-    console.log(output);
+    console.log('\n', 'The output of the Custom Coded Action is : ')
+    console.table(output.outputFields);
+
+    console.log('\n', 'The types are : ')
+    console.table(getKeyValueTypes(output.outputFields));
 });
