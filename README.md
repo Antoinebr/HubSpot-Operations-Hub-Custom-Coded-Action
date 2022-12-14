@@ -8,7 +8,13 @@ It also provides a "framework" to work locally on your Custom Coded Action and e
 
 ## How to use
 
-create a .env file at the root of the project with your privateAppToken 
+Clone the project and install the dependencies by running : 
+
+```
+npm install 
+```
+
+Then create a .env file at the root of the project with your privateAppToken 
 
 ```
 privateAppToken = "sdfsd-dsfsdf-wwxcwx-ffdsdfdsf-fsdffdsfs"
