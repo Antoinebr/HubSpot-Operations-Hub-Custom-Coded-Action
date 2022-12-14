@@ -136,3 +136,10 @@ cca ./merge-companies-based-on-name/cca.js
 ```
 
 
+# Dev 
+
+Run the tests by running mocha with : 
+
+```
+npx mocha
+```
