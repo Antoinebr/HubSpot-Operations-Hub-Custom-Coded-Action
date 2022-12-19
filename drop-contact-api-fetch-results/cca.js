@@ -29,25 +29,31 @@ exports.main = async (event, callback) => {
 
     if (!queryResult.data.data) throw new Error('dropContact returned an empty response');
 
-
     const userData = queryResult.data.data[0];
 
+    const { civility, company, company_linkedin, first_name, full_name, last_name, linkedin, phone, website } = userData;
 
-    const dropContactData = {
-        company: userData.company ? userData.company : '',
-        email: (userData.email[0].email !== undefined) ? userData.email[0].email : '',
-        phone: userData.phone ? userData.phone : '',
-        website: userData.website ? userData.website : '',
-    }
+
+    const email = (userData.email[0].email !== undefined) ? userData.email[0].email : '';
+    const secondaryEmail = (userData.email[1] !== undefined) ? userData.email[1].email : '';
+    const tertiaryEmail = (userData.email[2] !== undefined) ? userData.email[2].email : '';
 
 
     callback({
         outputFields: {
             dropContactCreditLeft: queryResult.data.credits_left,
-            company: dropContactData.company,
-            email: dropContactData.email,
-            phone: dropContactData.phone,
-            website: dropContactData.website,
+            email,
+            secondaryEmail,
+            tertiaryEmail,
+            civility,
+            company,
+            company_linkedin,
+            first_name,
+            full_name,
+            last_name,
+            linkedin,
+            phone,
+            website
         }
     });
 
