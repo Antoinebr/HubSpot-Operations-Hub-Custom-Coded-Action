@@ -2,7 +2,26 @@
 
 This Custom Coded Action connects with the https://www.dropcontact.com/ API 
 
+## Output
 
+```
+
+ The output of the Custom Coded Action is : 
+┌───────────────────────┬───────────────────┐
+│        (index)        │      Values       │
+├───────────────────────┼───────────────────┤
+│ dropContactCreditLeft │        112        │
+│ dropContactRequestId  │ 'vnkhvypgsrhkbgp' │
+└───────────────────────┴───────────────────┘
+
+ The types are : 
+┌───────────────────────┬──────────┐
+│        (index)        │  Values  │
+├───────────────────────┼──────────┤
+│ dropContactCreditLeft │ 'number' │
+│ dropContactRequestId  │ 'string' │
+└───────────────────────┴──────────┘
+```
 
 ## WorkFlow overview 
 
